@@ -1,0 +1,51 @@
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+<div *ngIf = "oneHero">
+  
+      <ul>
+        <li><a class="active" href="http://localhost:4200"> Home page</a></li>
+      </ul>
+    <div style="background-color: #4CAF50;  box-shadow: 0px 0px 10px 2px silver;"><h1 style ="text-align: center">{{oneHero.localized_name}}</h1></div>
+    <div class="w3-sidebar w3-bar-block" style="width:25%">
+        <img src="https://api.opendota.com{{oneHero.img}}" style="float: left; box-shadow: 0px 0px 10px 4px silver;"/>
+    </div>
+    <div style="margin-left:300px">
+
+        <div class="w3-container w3-teal">
+            <h2 style="font-family:  Comic Sans MS"> Primary attribute: {{oneHero.primary_attr}}</h2>
+            <h2 style="font-family:  Comic Sans MS"> Attacking type: {{oneHero.attack_type}}</h2>
+            <h2 style="font-family:  Comic Sans MS"> Base health: {{oneHero.base_health}}</h2>
+            <h2 style="font-family:  Comic Sans MS"> Base health regen: {{oneHero.base_health_regen}}</h2>
+            <h2 style="font-family:  Comic Sans MS"> Base mana: {{oneHero.base_mana}}</h2>
+            <h2 style="font-family:  Comic Sans MS"> Base mana regen: {{oneHero.base_mana_regen}}</h2>
+        </div>
+</div>
